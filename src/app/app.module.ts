@@ -10,6 +10,7 @@ import { TodoComponent } from './todo/todo.component';
 import { TodosComponent } from './todos/todos.component';
 import { NewTodoComponent } from './new-todo/new-todo.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     StoreModule.forRoot(AppReducer),
     // Note that you must instrument after importing StoreModule (config is optional)
     StoreDevtoolsModule.instrument({

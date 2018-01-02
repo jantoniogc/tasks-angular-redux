@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../redux/app.state';
+import { Todo } from '../../redux/todo/todo.model';
+
 
 @Component({
   selector: 'app-todos',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
-  constructor() { }
+  todos: Todo[];
+
+  constructor(
+    private store: Store<AppState>
+  ) {
+    this.readTodosState();
+   }
 
   ngOnInit() {
   }
 
+  private readTodosState() {
+    this.store.select('todos')
+    .subscribe((todos) => {
+      this.todos = todos;
+    });
+  }
 }

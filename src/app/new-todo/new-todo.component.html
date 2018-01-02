@@ -1,3 +1,8 @@
-<p>
-  new-todo works!
-</p>
+<input
+  id="new-todo"
+  class="new-todo"
+  type="text"
+  autofocus
+  (keyup.enter)="saveTodo()"
+  placeholder="What needs to be done?"
+  [formControl]="textField" />
