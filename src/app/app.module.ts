@@ -6,10 +6,18 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { AppReducer } from '../redux/app.reducer';
+import { TodoComponent } from './todo/todo.component';
+import { TodosComponent } from './todos/todos.component';
+import { NewTodoComponent } from './new-todo/new-todo.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoComponent,
+    TodosComponent,
+    NewTodoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
