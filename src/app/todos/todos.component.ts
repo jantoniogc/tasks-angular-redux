@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../redux/app.state';
 import { Todo } from '../../redux/todo/todo.model';
+import { getVisibleTodos } from '../../redux/todo/todo.selectors';
+
 
 
 @Component({
@@ -23,7 +25,7 @@ export class TodosComponent implements OnInit {
   }
 
   private readTodosState() {
-    this.store.select('todos')
+    this.store.select(getVisibleTodos)
     .subscribe((todos) => {
       this.todos = todos;
     });
