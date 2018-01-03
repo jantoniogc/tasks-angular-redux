@@ -15,6 +15,7 @@ export class TodoComponent implements OnInit {
   @Input() todo: Todo;
   checkField: FormControl;
   textField: FormControl;
+  editing: boolean;
 
   constructor(
     private store: Store<AppState>
@@ -39,5 +40,7 @@ export class TodoComponent implements OnInit {
     const action = new TodoUpdateAction(this.todo.id, this.textField.value);
     this.store.dispatch(action);
   }
-
+  activeEditMode() {
+    this.editing = true;
+  }
 }
